@@ -18,6 +18,7 @@ gets imported into it, boroughs that are not officially london boroughs get drop
 in datasetforgraphs.py a dataset for visualization gets created and used for plot lineplots using sns
 
 in data used for jupyter map you can find all the files needed to make the choropleth maps of london along with the dataset created from datasetforgraphs.py
-in ChoroplethLondon.ipynb you can find the code for this maps, had to use jupyter as geopandas was not functioning
-correctly in windows
-in visualization of the data there are some graphs and maps that could not be added to the pdf due to space
+
+in ChoroplethLondon.ipynb you can find the code for this maps, had to use jupyter as geopandas was not functioningcorrectly in windows
+
+in 'visualization of the data' there are some graphs and maps that could not be added to the pdf due to space
