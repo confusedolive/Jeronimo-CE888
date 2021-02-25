@@ -1,13 +1,18 @@
-The data from original unfiltered london data is used to obtain postcodes through latitude and longitude 
-using lat_long_to_txt function found in preprocessing.py
+Full final merged and filtered dataset available in 'filtered_merged_data_2019.zip'
+
+The data from 'original unfiltered london data' is used to obtain postcodes through latitude and longitude 
+using lat_long_to_txt function found in preprocessing.py the latitude and logitude of each datapoint is extracted into a txt file
+http://geodojo.net/uk/converter/ is used to convert this files into postcodes and the postcodes are pass into https://www.doogal.co.uk/BatchGeocoding.php
+to convert into boroughs
 this txt files are available under text postcode and boroughs
+
 function add_postcode_df is used to add the postcodes from txt file into the database
 then the function add borough to do the same thing wiht boroughs
 both functions take directory paths and iteretate through each dataset/txt file
 
 after this is done join_dataset is used to join all datasets into one
 
-in preprocessingdata.py the merged dataset gets filtered and relevant information from london borough profiles found in data used folder
+in preprocessingdata.py the merged dataset gets filtered and relevant information from 'london borough profiles' found in 'data used' folder
 gets imported into it, boroughs that are not officially london boroughs get dropped
 
 in datasetforgraphs.py a dataset for visualization gets created and used for plot lineplots using sns
