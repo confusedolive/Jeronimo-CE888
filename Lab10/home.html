@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+<body>
+<center><h1><font color="white">Insurance Prediction</h1></center>
+<h2>     </h2>
+
+<div align="center" style="margin-right: 30%;
+    margin-left: 30%;">
+
+  <form method="POST">
+  <form action="/action_page.php">
+    <label for="age"></label>
+    <input type="number" id="age" name="age" placeholder="age (between 29 and 77)" min="29" max="77" step="0.1" required size="35">
+
+    <label for="sex"></label>
+    <input type="number" id="sex" name="sex" placeholder="sex (between 0 or 1)" min="0" max="1" step="0.1" required size="35">
+
+    <label for="cp"></label>
+    <input type="number" id="cp" name="cp" placeholder="cp (between 0 and 3)" min="0" max="3" required size='35'>
+
+    <select name="req_model">
+    <option value="Logistic">Logistic Regression</option>
+    <option value="RandomForest">Random Forest</option>
+    <option value="SVM">SVM</option>
+  </select>
+
+
+    <input type="submit" value="Predict">
+  </form>
+</form>
+
+<form method="GET">
+    <center><h2><font color="Black"> Sale Category is {{ target}}</h2></center>
+    <center><h2><font color="Black"> {{ sale_making}}</h2></center>
+</form>
+
+
+</div>
+
+
+</body>
+</html>
