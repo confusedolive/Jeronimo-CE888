@@ -16,7 +16,7 @@ In progress.
 ![Example screenshot](./chloropleth/arrests.png)
 
 ## Setup
-* Python= 3.8.8
+* Python= 3.x.x
 * Pandas=1.2.1
 * ScikitLearn=
 * Numpy=
