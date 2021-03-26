@@ -40,4 +40,4 @@ Currently researching and preparing data.
 
 
 ## Contact
-Created by [@confusedolive]
+Created by Jeronimo Oliva Cano
