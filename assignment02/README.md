@@ -18,11 +18,11 @@ In progress.
 ## Setup
 * Python= 3.x.x
 * Pandas=1.2.1
-* ScikitLearn=
-* Numpy=
-* DoWhy=
-* Matplotlib=
-* Seaborn=
+* ScikitLearn=0.24.1
+* Numpy=1.19.5
+* DoWhy=0.6.0
+* Matplotlib=3.2.2
+* Seaborn=0.11.1
 
 ## Code Examples
 Show examples of usage:
