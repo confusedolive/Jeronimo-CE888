@@ -3,7 +3,7 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Images](#screenshots)
+* [Images](#images)
 * [Setup](#setup)
 * [Code examples](#code-examples)
 * [Status](#status)
@@ -25,9 +25,8 @@ In progress.
 * Seaborn=0.11.1
 
 ## Code Examples
-Show examples of usage:
-How to use function to show linear relationship:
-![linear](./examples/linreg_example.PNG)
+* How to use function to show linear relationship, avaliable in 'visualize.py':
+![linear](./Examples/linreg_example.PNG)
 
 ## To-do list:
 * Understand DoWhy library
