@@ -3,7 +3,7 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Screenshots](#screenshots)
+* [Images](#screenshots)
 * [Setup](#setup)
 * [Code examples](#code-examples)
 * [Status](#status)
@@ -12,8 +12,8 @@
 ## General info
 In progress.
 
-## Screenshots
-![Example screenshot](./chloropleth/arrests.png)
+## Images
+![Examples](./chloropleth/arrests.png)
 
 ## Setup
 * Python= 3.x.x
