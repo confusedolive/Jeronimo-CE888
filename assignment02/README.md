@@ -6,11 +6,12 @@
 * [Images](#images)
 * [Setup](#setup)
 * [Code examples](#code-examples)
+* [External resources](#external-resources-used)
 * [Status](#status)
 * [Contact](#contact)
 
 ## General info
-In progress.
+A study on police bias in London , with an emphasis in socioeconimcal status. Focusing on casual inference and utilizing the DoWhy library to find relevant information.
 
 ## Images
 ![Examples](./chloropleth/arrests.png)
@@ -27,6 +28,10 @@ In progress.
 ## Code Examples
 * How to use function to show linear relationship, avaliable in 'visualize.py':
 ![linear](./Examples/linreg_example.PNG)
+
+## External resources used 
+* https://github.com/Microsoft/dowhy , Dowhy library.
+* http://geodojo.net/uk/converter/ , Geodojo to convert latitude/longitude to postcodes
 
 ## To-do list:
 * Understand DoWhy library
