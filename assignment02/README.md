@@ -5,6 +5,7 @@
 * [General info](#general-info)
 * [Images](#images)
 * [Setup](#setup)
+* [How to](#how-to)
 * [Code examples](#code-examples)
 * [External resources](#external-resources-used)
 * [Status](#status)
@@ -24,6 +25,7 @@ A study on police bias in London , with an emphasis in socioeconimcal status. Fo
 * DoWhy=0.6.0
 * Matplotlib=3.2.2
 * Seaborn=0.11.1
+## How to
 
 ## Code Examples
 * How to use function to show linear relationship, avaliable in 'visualize.py':
