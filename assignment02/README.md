@@ -25,6 +25,8 @@ A study on police bias in London , with an emphasis in socioeconimcal status. Fo
 * DoWhy=0.6.0
 * Matplotlib=3.2.2
 * Seaborn=0.11.1
+* Scipy=1.6.0
+
 ## How to
 
 ## Code Examples
