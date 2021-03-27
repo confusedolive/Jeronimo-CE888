@@ -26,7 +26,8 @@ In progress.
 
 ## Code Examples
 Show examples of usage:
-No examples yet
+How to use function to show linear relationship:
+![linear](./examples/linreg_example.PNG)
 
 ## To-do list:
 * Understand DoWhy library
