@@ -15,7 +15,7 @@
 A study on police bias in London , with an emphasis in socioeconimcal status. Focusing on casual inference and utilizing the DoWhy library to find relevant information.
 
 ## Images
-![Examples](./chloropleth/arrests.png)
+![Examples](./chloropleth/pjimage.jpg)
 
 ## Setup
 * Python= 3.x.x
