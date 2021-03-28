@@ -28,7 +28,7 @@ A study on police bias in London , with an emphasis in socioeconimcal status. Fo
 * Scipy=1.6.0
 
 ## How to
-
+Section to write the correct steps to execute all code, essentially a guide on how to use the available data to produce the results in the paper
 ## Code Examples
 * How to use function to show linear relationship, avaliable in 'visualize.py':
 ![linear](./Examples/linreg_example.PNG)
