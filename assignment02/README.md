@@ -42,10 +42,10 @@ Section to write the correct steps to execute all code, essentially a guide on h
 * https://data.police.uk/data/,  Monthly databases of stop and search occurences.
 
 ## To-do list:
-* Understand DoWhy library
-* More research on casual inference
-* Get more data processed and ready
-* Any extra preliminary visualization
+- [x] Understand DoWhy library
+- [ ] More research on casual inference
+- [ ] Get more data processed and ready
+- [ ] Any extra preliminary visualization
 
 ## Status
 Project is: _in progress_<br/>
