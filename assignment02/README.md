@@ -46,9 +46,9 @@ A study on police bias in London , with an emphasis in socioeconimcal status. Fo
 * Any extra preliminary visualization
 
 ## Status
-Project is: _in progress_
+Project is: _in progress_<br/>
 Currently researching and preparing data.
 
 
 ## Contact
-Created by Jeronimo Oliva Cano <br/> E-mail: jeroolivacano@yahoo.es
+Created by Jeronimo Oliva Cano <br/> E-mail: jo20296@essex.ac.uk
