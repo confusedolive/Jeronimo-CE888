@@ -37,7 +37,7 @@ def line_int(var1 , var2):
     plt.plot(new_df[var1], line.intercept + line.slope*new_df[var1],
                                             'r', label='fitted line')
 
-    title = f'relationship between {var1} and {var2}'
+    title = f'correlation between {var1} and {var2}'
     plt.xlabel(var1)
     plt.ylabel(var2)
     plt.title(title)
