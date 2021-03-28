@@ -26,6 +26,8 @@ A study on police bias in London , with an emphasis in socioeconimcal status. Fo
 * Matplotlib=3.2.2
 * Seaborn=0.11.1
 * Scipy=1.6.0
+><br/>can be installed using:<br/>
+>> pip install -r /path/to/requirements.txt
 
 ## How to
 Section to write the correct steps to execute all code, essentially a guide on how to use the available data to produce the results in the paper
