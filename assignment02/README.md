@@ -37,7 +37,7 @@ A study on police bias in London , with an emphasis in socioeconimcal status. Fo
 * https://github.com/Microsoft/dowhy , Dowhy library.
 * http://geodojo.net/uk/converter/ , Geodojo to convert latitude/longitude to postcodes.
 * https://data.london.gov.uk/dataset/ , London Datastore to obtain relevant borough information.
-* https://data.police.uk/data/,  where the databses used can be obtained.
+* https://data.police.uk/data/,  Monthly databases of stop and search occurences.
 
 ## To-do list:
 * Understand DoWhy library
