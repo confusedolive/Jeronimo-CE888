@@ -53,6 +53,7 @@ Section to write the correct steps to execute all code, essentially a guide on h
 Project is: _in progress_<br/>
 Currently researching and preparing data.
 
-
+## Notes
+To be updatated when the new census(2021) data becomes available.
 ## Contact
 Created by Jeronimo Oliva Cano <br/> E-mail: jo20296@essex.ac.uk
