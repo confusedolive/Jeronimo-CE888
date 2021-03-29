@@ -46,6 +46,8 @@ Section to write the correct steps to execute all code, essentially a guide on h
 - [ ] More research on casual inference
 - [ ] Get more data processed and ready
 - [ ] Any extra preliminary visualization
+- [ ] Implement dowhy in available data
+- [ ] write relevant results 
 
 ## Status
 Project is: _in progress_<br/>
