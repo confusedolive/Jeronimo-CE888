@@ -12,7 +12,7 @@
 * [Contact](#contact)
 
 ## General info
-A study on police bias in London , with an emphasis in socioeconimcal status. Focusing on casual inference and utilizing the DoWhy library to find relevant information.
+A study on police bias in London , with an emphasis in socioeconimcal status. Focusing on casual inference and utilizing the DoWhy library to find relevant information. This repository and the report should complement each other yet be self contained enough to not depend on each other.
 
 ## Images
 ![Examples](./chloropleth/pjimage.jpg "London chloropleth maps")
