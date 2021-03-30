@@ -1,5 +1,5 @@
 # Analysis of socieconomical bias by the police in London, UK
-> A study on how socio economical status affects police decisions during stop and search procedures in London
+> A study on the effect socio economical status of an area has in police decisions during stop and search procedures in London. 
 
 ## Table of contents
 * [General info](#general-info)
