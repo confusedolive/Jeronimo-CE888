@@ -5,7 +5,7 @@ import numpy   as np
 
 import matplotlib.pyplot as plt
 
-from scipy.stats           import linregress, spearmanr
+from scipy.stats           import  linregress, spearmanr
 from sklearn.cluster       import  KMeans
 from sklearn.preprocessing import  StandardScaler
 
