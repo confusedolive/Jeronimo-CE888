@@ -38,6 +38,7 @@ Section to write the correct steps to execute all code, essentially a guide on h
 ## External resources used 
 * https://github.com/Microsoft/dowhy , Dowhy library.
 * http://geodojo.net/uk/converter/ , Geodojo to convert latitude/longitude to postcodes.
+* https://www.doogal.co.uk/BatchGeocoding.php , Doogal to convert postcodes to London Boroughs.
 * https://data.london.gov.uk/dataset/ , London Datastore to obtain relevant borough information.
 * https://data.police.uk/data/,  Monthly databases of stop and search occurences.
 
