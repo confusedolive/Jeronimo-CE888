@@ -12,7 +12,7 @@
 * [Contact](#contact)
 
 ## General info
-A study on police bias in London , with an emphasis in socioeconimcal status. Focusing on casual inference and utilizing the DoWhy library to find relevant information. This repository and the report should complement each other yet be self contained enough to not depend on each other.
+A study on police bias in London , with an emphasis in socioeconimcal status. Focusing on causal inference and utilizing the DoWhy library to find relevant information. This repository and the report should complement each other yet be self contained enough to not depend on each other.
 
 ## Images
 ![Examples](./chloropleth/pjimage.jpg "London chloropleth maps")
@@ -38,13 +38,14 @@ Section to write the correct steps to execute all code, essentially a guide on h
 ## External resources used 
 * https://github.com/Microsoft/dowhy , Dowhy library.
 * http://geodojo.net/uk/converter/ , Geodojo to convert latitude/longitude to postcodes.
+* https://www.doogal.co.uk/BatchGeocoding.php , Doogal to convert postcodes to London Boroughs.
 * https://data.london.gov.uk/dataset/ , London Datastore to obtain relevant borough information.
 * https://data.police.uk/data/,  Monthly databases of stop and search occurences.
 
 ## To-do list:
 - [x] Understand DoWhy library
 - [ ] More research on casual inference
-- [ ] Get more data processed and ready
+- [x] Get more data processed and ready
 - [ ] Any extra preliminary visualization
 - [ ] Implement dowhy in available data
 - [ ] write relevant results 
@@ -54,6 +55,6 @@ Project is: _in progress_<br/>
 Currently researching and preparing data.
 
 ## Notes
-To be updatated when the new census(2021) data becomes available.
+To be updated when the new census(2021) data becomes available.
 ## Contact
 Created by Jeronimo Oliva Cano <br/> E-mail: jo20296@essex.ac.uk
