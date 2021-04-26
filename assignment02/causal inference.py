@@ -42,15 +42,14 @@ def elbowing():
 
 elbowing()
 # n clusters = (3 or 4 unpreceise elbow chart)
-kmean = KMeans(n_clusters=3)
+kmean = KMeans(n_clusters=4)
 kmean.fit(data_standard)
 # create vbariable called labels
 data_k['labels'] = kmean.labels_
 data_k.dropna(inplace=True)
-
 sns.scatterplot(x=data_k['median income'],
                 y=data_k['unemployment rate'],
-                hue=data_k['labels'])
+                hue=data_k['labels'], palette='Set1')
 plt.title('K neighbours clustered SES')
 
 plt.savefig(os.path.join(fig_path, 'scatter_test_kmeans'))
