@@ -30,7 +30,8 @@ A study on police bias in London , with an emphasis in socioeconimcal status. Fo
 >> pip install -r /path/to/requirements.txt
 
 ## How to
-Section to write the correct steps to execute all code, essentially a guide on how to use the available data to produce the results in the paper
+The folder [Examples](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/Examples) contains examples of how some snippets of code work,
+the folder [choloropeth](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/chloropleth) & [visuals](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/visuals) contain relevant graphs and plots created.
 ## Code Examples
 * How to use function to show linear relationship, avaliable in 'visualize.py':
 ![linear](./Examples/linreg_example.PNG)
@@ -44,9 +45,9 @@ Section to write the correct steps to execute all code, essentially a guide on h
 
 ## To-do list:
 - [x] Understand DoWhy library
-- [ ] More research on casual inference
+- [x] More research on casual inference
 - [x] Get more data processed and ready
-- [ ] Any extra preliminary visualization
+- [x] Any extra preliminary visualization
 - [ ] Implement dowhy in available data
 - [ ] write relevant results 
 
