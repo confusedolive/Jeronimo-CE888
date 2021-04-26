@@ -1,4 +1,4 @@
-# The influence of an area’s economic status in the outcome of stop and search procedures. A causal analysis of police bias in London.
+# The influence of an area’s socio economic status in the outcome of stop and search procedures. A causal analysis of police bias in London.
 > A study on the effect socio economical status of an area has in police decisions during stop and search procedures in London. 
 
 ## Table of contents
