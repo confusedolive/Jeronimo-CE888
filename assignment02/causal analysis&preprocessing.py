@@ -91,17 +91,15 @@ def pipeline_preprocessing():
     return le  # return labelencoder object to reverse transform if needed the encoded outcome
 
 
-le = pipeline_preprocessing()
+le = pipeline_preprocessing() #process the dataset return the label encoder instance
 
-data
 # elbow chart to find number of clusters
 def elbowing():
     # plots elbow plot to find optimal neighbours for kmeans
-    data_k = data[['median income', 'unemployment rate']].copy()
-
+    data_k = data[['median income']].copy()
     # standarize data
     standard = StandardScaler()
-    transform = data_k['median income'].copy()
+    transform = data_k.copy()
     data_standard = standard.fit_transform(transform.values.reshape(-1, 1))
     wcss = []
     for i in range(1, 11):
@@ -116,8 +114,8 @@ def elbowing():
 
 
 elbowing()
-# n clusters = (2, 3 or 4 unprecise elbow chart)
 
+# n clusters = (2)
 def create_clusters(clusters=2):
     '''Essentially divide the median income variable into
     two groups low-medium an high average income, as dowhy
@@ -164,7 +162,6 @@ def replace_values(val, back_val=False, old_vals=None):
 
 
 df1 = data.copy()  # dataset for causal analysis
-# Encode all categorical variables
 to_replace_var = [x for x in df1.columns if df1[x].dtype == object]
 replaced_vals = []  # list of lists containing the original values
 for x in to_replace_var:
@@ -174,46 +171,45 @@ for x in to_replace_var:
 # test de encoding works correctly
 # for x, y in zip(to_replace_var, replaced_vals):
 #     test = replace_values(x,back_val=True, old_vals=y)
-
-# rename variables for pygraphviz to understand them
+df1['SES groups'] = create_clusters()
+# rename variables for pygraphviz to understand them, group 0 = True | high-medium SES , group 1 = False| low SES
 df1.rename(columns={'Age range': 'Age_range', 'Object of search': 'Object_of_search',
                     'median income': 'median_income', 'unemployment rate': 'unemployment_rate',
                     'Crime rates per thousand': 'Crime_rates_per_thousand',
-                    'SES groups': 'income_groups'}, inplace=True)
+                    'SES groups': 'SES_groups'}, inplace=True)
 
 #Drop redundant variables
 df1.drop(columns=['median_income', 'Legislation',
          'Type', 'Borough'], inplace=True)
 
 # replacing "treatment" variable to boolean values False if income is below average and True if it is above
-df1['income_groups'] = df1['income_groups'].replace([0, 1], [False, True])
-to_standard = df1['Crime_rates_per_thousand']
+df1['SES_groups'] = df1['SES_groups'].replace([1, 0], [False, True])
+
 
 # defines causal graph to be given to the dowhy model object
 causual_graph = '''digraph {
 ethnicity[label="Ethnic origin"];
 Age_range[label="Age range"];
-Gender[label="Gender"];
 Hour[label="Time of stop"];
+Crime_rates_per_thousand[label="Crime rates"];
+unemployment_rate[label="unemployment"];
 Object_of_search[label="Reason for stop"];
 Outcome[label="Outcome of Stop and search"];
-unemployment_rate[label="Unemployment"];
-Crime_rates_per_thousand[label="crime rate"];
-income_groups[label="average income"];
+SES_groups[label="average income"];
 U[label="Unobserved Confounders"];
-U->income_groups; U->Outcome; U->Object_of_search;
+U->SES_groups; U->Outcome; U->Object_of_search;U->unemployment_rate;
 ethnicity->Outcome;
 Age_range->Outcome;
 Hour->Outcome;
 Crime_rates_per_thousand->Outcome;
-unemployment_rate->Crime_rates_per_thousand; unemployment_rate->income_groups;
+unemployment_rate->SES_groups;
 Object_of_search->Outcome;
-income_groups->Outcome; income_groups->Crime_rates_per_thousand; income_groups->Object_of_search
+SES_groups->Outcome;SES_groups->Object_of_search;SES_groups->Crime_rates_per_thousand
 }'''
 
 #Create dowhy causal model , treatment is income groups , outcome is the Outcome of stop and search
 model = dowhy.CausalModel(data=df1, graph=causual_graph.replace(
-    "\n", " "), treatment="income_groups", outcome="Outcome")
+    "\n", " "), treatment="SES_groups", outcome="Outcome")
 
 model.view_model()#saves image of model as causal_model.png
 display(Image(filename="causal_model.png"))# visualize graphical causation model
@@ -231,5 +227,5 @@ print(estimate)
 
 #refute utilizing placebo treatment , estimand should approximate 0 if correct
 refutation = model.refute_estimate(identified_estimand, estimate, method_name="placebo_treatment_refuter",
-                                   placebo_type="permute", num_simulations=10)
+                                   placebo_type="permute", num_simulations=3)
 print(refutation)
