@@ -14,7 +14,7 @@
 A study on police bias in London , with an emphasis in socioeconimcal status. Focusing on causal inference and utilizing the DoWhy library to estimate the effect of socieconomic status (treatment) in the outcome of a stop and search procedure.
 
 ## Images
-![Examples](./chloropleth/pjimage.jpg "London chloropleth maps")
+![Examples](https://github.com/confusedolive/Jeronimo-CE888/blob/main/assignment02/visuals/chloropleth/pjimage.jpg?raw=true)
 
 ## Setup
 * Python= 3.x.x
