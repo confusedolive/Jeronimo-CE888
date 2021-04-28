@@ -54,15 +54,14 @@ def pipeline_preprocessing():
         data['Crime_rates_per_thousand_population_2014/15'].astype(float)
     mean_rates = data['Crime_rates_per_thousand_population_2014/15'].mean()
     data[mask] = data[mask].replace([np.nan], [mean_rates])
-    # renames columns for ease of use
 
+    # renames columns for ease of use
     data.rename(
         columns={'Modelled_Household_median_income_estimates_2012/13': 'median income',
                  'Unemployment_rate_(2015)': 'unemployment rate',
                  'Crime_rates_per_thousand_population_2014/15': 'Crime rates per thousand',
                  'Self-defined ethnicity': 'ethnicity'}, inplace=True)
 
-    # Change variable type to float64 from object type
     '''Converts Date variable to timedelta type out
        of which the hours at which the stop and search happend
        are extracted into a new variable named Hour, utilizing cut
@@ -81,7 +80,7 @@ def pipeline_preprocessing():
          'Longitude', 'postcode'], axis=1, inplace=True)
 
     # drop missing values
-    # data.dropna(inplace=True)
+    data.dropna(inplace=True)
 
     le = LabelEncoder()  # label encoder instance
     data['Outcome'] = le.fit_transform(
@@ -94,10 +93,16 @@ def pipeline_preprocessing():
 
 le = pipeline_preprocessing()
 
-
+data
 # elbow chart to find number of clusters
 def elbowing():
     # plots elbow plot to find optimal neighbours for kmeans
+    data_k = data[['median income', 'unemployment rate']].copy()
+
+    # standarize data
+    standard = StandardScaler()
+    transform = data_k['median income'].copy()
+    data_standard = standard.fit_transform(transform.values.reshape(-1, 1))
     wcss = []
     for i in range(1, 11):
         kmean = KMeans(n_clusters=i)
@@ -105,11 +110,13 @@ def elbowing():
         wcss.append(kmean.inertia_)
 
     plt.plot(range(1, 11), wcss, marker='o', linestyle='-')
+    plt.title('Elbow plot')
+    plt.savefig(r'visuals\Elbow plot.png')
     plt.show()
 
 
 elbowing()
-# n clusters = (3 or 4 unprecise elbow chart)
+# n clusters = (2, 3 or 4 unprecise elbow chart)
 
 def create_clusters(clusters=2):
     '''Essentially divide the median income variable into
