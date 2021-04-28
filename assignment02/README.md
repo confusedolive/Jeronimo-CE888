@@ -31,7 +31,7 @@ A study on police bias in London , with an emphasis in socioeconimcal status. Fo
 
 ## How to
 The folder [Examples](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/Examples) contains examples of how some snippets of code work,
-the folder [choloropeth](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/chloropleth) & [visuals](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/visuals) contain relevant graphs and plots created. [Visualunderstanding.py](https://github.com/confusedolive/Jeronimo-CE888/blob/main/assignment02/Visualunderstanding.py) contains all the code used to visualize the data including the distribution of the outcome of stop and search procedures per variable, the relationship between arrests and household income and unemployment rate.
+the folder [visuals](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/visuals) contain relevant graphs and plots created. [Visualunderstanding.py](https://github.com/confusedolive/Jeronimo-CE888/blob/main/assignment02/Visualunderstanding.py) contains all the code used to create the relevant graphs found on visuals folder, other then the chloropeth folder which code is available in [here](https://github.com/confusedolive/Jeronimo-CE888/tree/main/Assingment01/Data%20used%20for%20jupyter%20map).
 ## Code Examples
 * How to use function to show linear relationship, avaliable in 'visualize.py':
 ![linear](./Examples/linreg_example.PNG)
