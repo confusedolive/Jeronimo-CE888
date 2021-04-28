@@ -30,7 +30,7 @@ A study on police bias in London , with an emphasis in socioeconimcal status. Fo
 
 ## How to
 The folder [Examples](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/Examples) contains examples of how some snippets of code work,
-the folder [visuals](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/visuals) contain relevant graphs and plots created. [Visualunderstanding.py](https://github.com/confusedolive/Jeronimo-CE888/blob/main/assignment02/Visualunderstanding.py) contains all the code used to create the relevant graphs found on visuals folder, other then the chloropeth folder which code is available in [here](https://github.com/confusedolive/Jeronimo-CE888/tree/main/Assingment01/Data%20used%20for%20jupyter%20map).
+the folder [visuals](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/visuals) contain relevant graphs and plots created. [Visualunderstanding.py](https://github.com/confusedolive/Jeronimo-CE888/blob/main/assignment02/Visualunderstanding.py) contains all the code used to create the relevant graphs found on visuals folder, other then the chloropeth folder which code is available in [here](https://github.com/confusedolive/Jeronimo-CE888/tree/main/Assingment01/Data%20used%20for%20jupyter%20map). The folder [data](https://github.com/confusedolive/Jeronimo-CE888/tree/main/assignment02/data) contains the final merged dataset utilized for analysis and visualization, the code utilized to create this dataset can be found in [here](https://github.com/confusedolive/Jeronimo-CE888/tree/main/Assingment01), it also contains the London-borough information dataset which is also utilized to retrieve borough level information.
 
 ## External resources used 
 * https://github.com/Microsoft/dowhy , Dowhy library.
@@ -44,12 +44,12 @@ the folder [visuals](https://github.com/confusedolive/Jeronimo-CE888/tree/main/a
 - [x] More research on casual inference
 - [x] Get more data processed and ready
 - [x] Any extra preliminary visualization
-- [ ] Implement dowhy in available data
-- [ ] write relevant results 
+- [x] Implement dowhy in available data
+- [x] write relevant results 
 
 ## Status
-Project is: _in progress_<br/>
-Currently researching and preparing data.
+Project is: _finished_<br/>
+
 
 ## Notes
 To be updated when the new census(2021) data becomes available.
