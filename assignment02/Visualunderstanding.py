@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from scipy import stats
 from scipy.stats import linregress, spearmanr
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import LabelEncoder, StandardScaler
-from scipy import stats
 
 #########################################################################################################################
 #                                                Visual Exploration                                                     #
@@ -23,15 +23,15 @@ data.drop(['Unnamed: 0', 'Date', 'Part of a policing operation', 'Policing opera
            'Latitude', 'Longitude', 'postcode'], axis=1, inplace=True)
 
 data.isnull().sum()
-data.dropna(inplace=True) #Drops missing values
+data.dropna(inplace=True)  # Drops missing values
 
 data.rename(columns={'Modelled_Household_median_income_estimates_2012/13': 'median income',
-                     'Unemployment_rate_(2015)': 'unemployment rate'}, inplace=True) # renames columns for ease of use
+                     'Unemployment_rate_(2015)': 'unemployment rate'}, inplace=True)  # renames columns for ease of use
 
-#encode Outcome variable
+# encode Outcome variable
 le = LabelEncoder()
 data['Outcome'] = le.fit_transform(data['Outcome'])
-groups = data.groupby('Borough') # groups by borough
+groups = data.groupby('Borough')  # groups by borough
 
 # creates a list of lists containing borough, median income, unemployment rate, n of arrests and total stops.
 grouped = [[brgh, len(ds),
@@ -42,12 +42,14 @@ grouped = [[brgh, len(ds),
 
 
 new_df = pd.DataFrame(grouped, columns=['borough', 'stops', 'median income',
-                                        'arrests', 'unemployment']) #Creates dataframe
+                                        'arrests', 'unemployment'])  # Creates dataframe
 correlation_matrix = new_df.corr()
 # Stops and median income negative pearson correlation -0.44
 # stops and unemployment positive pearson correlation 0.39
 # arrests and median income -0.43
 # arrests and unemployment 0.35
+
+
 def correlation_pval():
     '''
         Plots a heatmap with the pearson coeeficient correlation
@@ -60,6 +62,7 @@ def correlation_pval():
         '''
     sns.heatmap(correlation_matrix, annot=True, cmap='Blues', vmin=-1, vmax=1)
     plt.title('Correlation Heatmap')
+    plt.savefig(r'visuals/Correlation heatmap.png')
     plt.show()
     llista = ['median income', 'unemployment']
     output = 'arrests'
@@ -70,12 +73,26 @@ def correlation_pval():
         vals.append((x, p))
     return vals
 
-p_vals = correaltion_pval()
+
+p_vals = correlation_pval()
 
 print(p_vals)
 ##########visualize relationships########################
 
+
 def line_int(df, var1, var2):
+    '''
+       ---------------------------------------------
+       Calculates a linear least-squares regression
+       between two variables, plots the best line
+       between this variables returns the p-value
+       null hyptohesis being the slope is zero.
+       ---------------------------------------------
+        df = dataset containing variables
+        var1 = first variable for linregress
+        var2 = second variable for linregress
+       ---------------------------------------------
+         '''
     sns.set_palette('Blues_r')
     line = linregress(df[var1], df[var2])
     plt.plot(df[var1], df[var2], 'o', label='data')
@@ -92,7 +109,8 @@ def line_int(df, var1, var2):
 
 
 for x in ['stops', 'median income', 'unemployment']:
-    line_int(new_df, 'arrests', x)
+    p_val = line_int(new_df, 'arrests', x)
+    print(f'{x} pvalue = {p_val:.3f}')
 
 
 # object of search frequency
@@ -128,7 +146,7 @@ def plot_object_search(data, type, save=False):
 
     title = f'Frequency of {type}'
     perc = visual_data['Object of search'].value_counts() / len(data) * 100
-    fig = perc.sort_values(ascending=False).plot.bar(color='lightcoral')
+    fig = perc.sort_values(ascending=False).plot.bar()
     fig.set_title(title)
     fig.set_ylabel('Percentage of total stop and search occurences')
     plt.xticks(rotation=65)
@@ -139,6 +157,7 @@ def plot_object_search(data, type, save=False):
     print('-' * 50)
     print(perc.apply(lambda x: round(x, 2)))
     print('-' * 50)
+
 
 test1 = data[data['Outcome'] == 0]
 test2 = data[data['Outcome'] == 1]
@@ -163,14 +182,31 @@ def percentage_arrest(val):
 
 
 def plot_unique_outcome(val):
-    print('-'*20,val,'-'*20)
+    '''
+    ------------------------------------------
+    For  variable inputted it plots
+    a graph showing the Outcome distribution per
+    unique value in the selected variable.
+    prints a pseudo-report on each group of unique
+    value with the amount of samples per group
+    total percentage , and percentage of arrest
+    and no further action per group.
+    --------------------------------------------
+        val = Unique variable to be checked
+    --------------------------------------------
+    '''
+    path = r'visuals\frequencies'
+    print('-' * 20, val, '-' * 20)
     sns.set_palette('Set1')
-    sns.histplot(x=val,data=data, hue='Outcome', multiple='stack')
+    sns.histplot(x=val, data=data, hue='Outcome', multiple='stack')
     plt.title(val)
     plt.xticks(rotation=90)
+    plt.legend(title='Outcome', labels=['Arrest', 'No further action'])
+    plt.savefig(os.path.join(path, f'{val} frequency and outcome.png'))
     plt.show()
-    print('-'*60)
+    print('-' * 60)
     percentage_arrest(val)
 
-for x in [n for n in data.columns if n not in ['Outcome','labels']]:
+
+for x in [n for n in data.columns if n not in ['Outcome', 'labels']]:
     plot_unique_outcome(x)
